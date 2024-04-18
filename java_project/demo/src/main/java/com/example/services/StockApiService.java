@@ -48,8 +48,8 @@ public class StockApiService {
         }
     }
 
-    public Map<String, StockData> getStockData(String symbol) {
-        String urlString = String.format("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=%s&apikey=%s", symbol, API_KEY);
+    public Map<String, StockData> getStockData(String symbol, String api_time) {
+        String urlString = String.format("https://www.alphavantage.co/query?function=TIME_SERIES_%s&symbol=%s&apikey=%s", api_time, symbol, API_KEY);
         Map<String, StockData> stockDataMap = new HashMap<>();
         try {
             URL url = new URL(urlString);

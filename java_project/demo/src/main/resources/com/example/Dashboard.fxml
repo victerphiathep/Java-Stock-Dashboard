@@ -59,7 +59,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="btn_workbench11" layoutX="23.0" layoutY="256.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="204.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Intraday" textAlignment="CENTER" textFill="WHITE">
+                  <Button fx:id="intraday_button" layoutX="23.0" layoutY="256.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="204.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Intraday" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Georgia Bold" size="18.0" />
                      </font>
@@ -71,12 +71,12 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="btn_workbench111" layoutX="18.0" layoutY="330.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="204.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Daily" textAlignment="CENTER" textFill="WHITE">
+                  <Button fx:id="daily_button" layoutX="18.0" layoutY="330.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="204.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Daily" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Georgia Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btn_workbench1111" layoutX="18.0" layoutY="817.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="204.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Quit" textAlignment="CENTER" textFill="WHITE">
+                  <Button fx:id="quit_button" layoutX="18.0" layoutY="817.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="204.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Quit" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Georgia Bold" size="18.0" />
                      </font>
@@ -93,12 +93,12 @@
                         <Image url="@images/profile.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="btn_workbench1112" layoutX="18.0" layoutY="367.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="204.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Weekly" textAlignment="CENTER" textFill="WHITE">
+                  <Button fx:id="weekly_button" layoutX="18.0" layoutY="367.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="204.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Weekly" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Georgia Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btn_workbench11121" layoutX="18.0" layoutY="404.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="204.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Monthly" textAlignment="CENTER" textFill="WHITE">
+                  <Button fx:id="monthly_button" layoutX="18.0" layoutY="404.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="204.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Monthly" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Georgia Bold" size="18.0" />
                      </font>
@@ -110,7 +110,7 @@
          <children>
             <Pane layoutY="14.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="114.0" prefWidth="1104.0">
                <children>
-                  <TextField fx:id="searchBar" layoutX="737.0" layoutY="53.0" prefHeight="37.0" prefWidth="191.0" stylesheets="@style.css" text="Search Ticker. . .">
+                  <TextField fx:id="searchBar" layoutX="737.0" layoutY="53.0" opacity="0.31" prefHeight="37.0" prefWidth="191.0" stylesheets="@style.css" text="Search">
                      <font>
                         <Font name="Georgia" size="15.0" />
                      </font>
@@ -147,7 +147,7 @@
             </Pane>
             <Pane fx:id="pane_1" layoutX="21.0" layoutY="289.0" prefHeight="239.0" prefWidth="160.0" styleClass="pane_1" stylesheets="@style.css">
                <children>
-                  <Label fx:id="pane_1_date" layoutX="27.0" layoutY="14.0" text="Date" textFill="WHITE">
+                  <Label fx:id="pane_1_date" layoutX="13.0" layoutY="14.0" text="Date" textFill="WHITE">
                      <font>
                         <Font name="Georgia" size="21.0" />
                      </font>
@@ -198,15 +198,15 @@
                   <Font name="Georgia" size="84.0" />
                </font>
             </Label>
-            <Label fx:id="percent_change" layoutX="205.0" layoutY="213.0" text="0.00%">
+            <Label fx:id="percent_change" layoutX="37.0" layoutY="262.0" text="0.00%">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="last_refreshed" layoutX="37.0" layoutY="246.0" prefHeight="16.0" prefWidth="217.0" text="Last Refreshed:" />
+            <Label fx:id="last_refreshed" layoutX="37.0" layoutY="246.0" prefHeight="16.0" prefWidth="296.0" text="Last Refreshed:" />
             <Pane fx:id="pane_2" layoutX="212.0" layoutY="289.0" prefHeight="239.0" prefWidth="160.0" styleClass="pane_111" stylesheets="@style.css">
                <children>
-                  <Label fx:id="pane_2_date" layoutX="27.0" layoutY="14.0" text="Date" textFill="WHITE">
+                  <Label fx:id="pane_2_date" layoutX="13.0" layoutY="14.0" text="Date" textFill="WHITE">
                      <font>
                         <Font name="Georgia" size="21.0" />
                      </font>
@@ -240,7 +240,7 @@
             </Pane>
             <Pane fx:id="pane_3" layoutX="398.0" layoutY="289.0" prefHeight="239.0" prefWidth="160.0" styleClass="pane_1" stylesheets="@style.css">
                <children>
-                  <Label fx:id="pane_3_date" layoutX="27.0" layoutY="14.0" text="Date" textFill="WHITE">
+                  <Label fx:id="pane_3_date" layoutX="13.0" layoutY="14.0" text="Date" textFill="WHITE">
                      <font>
                         <Font name="Georgia" size="21.0" />
                      </font>
@@ -274,7 +274,7 @@
             </Pane>
             <Pane fx:id="pane_4" layoutX="21.0" layoutY="577.0" prefHeight="239.0" prefWidth="160.0" styleClass="pane_1" stylesheets="@style.css">
                <children>
-                  <Label fx:id="pane_4_date" layoutX="19.0" layoutY="14.0" text="Date" textFill="WHITE">
+                  <Label fx:id="pane_4_date" layoutX="12.0" layoutY="14.0" text="Date" textFill="WHITE">
                      <font>
                         <Font name="Georgia" size="21.0" />
                      </font>
@@ -308,7 +308,7 @@
             </Pane>
             <Pane fx:id="pane_5" layoutX="212.0" layoutY="577.0" prefHeight="239.0" prefWidth="160.0" styleClass="pane_111" stylesheets="@style.css">
                <children>
-                  <Label fx:id="pane_5_date" layoutX="19.0" layoutY="14.0" text="Date" textFill="WHITE">
+                  <Label fx:id="pane_5_date" layoutX="12.0" layoutY="14.0" text="Date" textFill="WHITE">
                      <font>
                         <Font name="Georgia" size="21.0" />
                      </font>
@@ -342,7 +342,7 @@
             </Pane>
             <Pane fx:id="pane_6" layoutX="398.0" layoutY="577.0" prefHeight="239.0" prefWidth="160.0" styleClass="pane_1" stylesheets="@style.css">
                <children>
-                  <Label fx:id="pane_6_date" layoutX="27.0" layoutY="14.0" text="Date" textFill="WHITE">
+                  <Label fx:id="pane_6_date" layoutX="12.0" layoutY="14.0" text="Date" textFill="WHITE">
                      <font>
                         <Font name="Georgia" size="21.0" />
                      </font>
@@ -374,6 +374,11 @@
                   </Label>
                </children>
             </Pane>
+            <Label fx:id="api_time" layoutX="354.0" layoutY="143.0" prefHeight="140.0" prefWidth="204.0">
+               <font>
+                  <Font size="51.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>
