@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="877.0" prefWidth="1343.0" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="877.0" prefWidth="1343.0" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.DashboardController">
    <children>
       <VBox prefHeight="714.0" prefWidth="245.0">
          <children>
@@ -59,7 +59,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="btn_workbench11" layoutX="23.0" layoutY="256.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="204.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Placeholder" textAlignment="CENTER" textFill="WHITE">
+                  <Button fx:id="btn_workbench11" layoutX="23.0" layoutY="256.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="204.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Intraday" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Georgia Bold" size="18.0" />
                      </font>
@@ -71,17 +71,10 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="btn_workbench111" layoutX="23.0" layoutY="311.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="204.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Placeholder" textAlignment="CENTER" textFill="WHITE">
+                  <Button fx:id="btn_workbench111" layoutX="18.0" layoutY="330.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="204.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Daily" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Georgia Bold" size="18.0" />
                      </font>
-                     <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/buy.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
                   </Button>
                   <Button fx:id="btn_workbench1111" layoutX="18.0" layoutY="817.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="204.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Quit" textAlignment="CENTER" textFill="WHITE">
                      <font>
@@ -100,6 +93,16 @@
                         <Image url="@images/profile.png" />
                      </image>
                   </ImageView>
+                  <Button fx:id="btn_workbench1112" layoutX="18.0" layoutY="367.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="204.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Weekly" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_workbench11121" layoutX="18.0" layoutY="404.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="204.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Monthly" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia Bold" size="18.0" />
+                     </font>
+                  </Button>
                </children></AnchorPane>
          </children>
       </VBox>
@@ -107,21 +110,16 @@
          <children>
             <Pane layoutY="14.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="114.0" prefWidth="1104.0">
                <children>
-                  <TextField fx:id="txt_search" layoutX="737.0" layoutY="53.0" prefHeight="37.0" prefWidth="191.0" stylesheets="@style.css" text="Search Ticker. . .">
+                  <TextField fx:id="searchBar" layoutX="737.0" layoutY="53.0" prefHeight="37.0" prefWidth="191.0" stylesheets="@style.css" text="Search Ticker. . .">
                      <font>
                         <Font name="Georgia" size="15.0" />
                      </font>
                   </TextField>
-                  <ImageView fitHeight="29.0" fitWidth="27.0" layoutX="703.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/search.png" />
-                     </image>
-                  </ImageView>
-                  <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="935.0" layoutY="52.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="37.0" text="Button">
+                  <Button fx:id="searchButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="935.0" layoutY="52.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="37.0" text="Button">
                      <graphic>
-                        <ImageView fitHeight="31.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="29.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/cogwheel.png" />
+                              <Image url="@images/search.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -135,12 +133,12 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Label layoutX="46.0" layoutY="40.0" prefHeight="49.0" prefWidth="489.0" text="Stock Market Dashboard">
+                  <Label layoutX="40.0" layoutY="29.0" prefHeight="56.0" prefWidth="586.0" text="Stock Market Dashboard">
                      <font>
-                        <Font name="Georgia" size="42.0" />
+                        <Font size="46.0" />
                      </font>
                   </Label>
-                  <Label layoutX="174.0" layoutY="82.0" text="Powered by Alphavantage API">
+                  <Label layoutX="276.0" layoutY="79.0" text="Alphavantage API">
                      <font>
                         <Font name="Georgia" size="13.0" />
                      </font>
@@ -149,29 +147,39 @@
             </Pane>
             <Pane fx:id="pane_1" layoutX="21.0" layoutY="289.0" prefHeight="239.0" prefWidth="160.0" styleClass="pane_1" stylesheets="@style.css">
                <children>
-                  <Label layoutX="27.0" layoutY="14.0" text="Daily Price" textFill="WHITE">
+                  <Label fx:id="pane_1_date" layoutX="27.0" layoutY="14.0" text="Date" textFill="WHITE">
                      <font>
                         <Font name="Georgia" size="21.0" />
                      </font>
                   </Label>
-                  <Label layoutX="60.0" layoutY="52.0" text="\$0.00" textFill="WHITE">
+                  <Label fx:id="pane_1_open" layoutX="18.0" layoutY="63.0" text="OPEN:" textFill="WHITE">
                      <font>
                         <Font name="Georgia" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="60.0" layoutY="67.0" text="\$0.00" textFill="WHITE">
+                  <Label fx:id="pane_1_high" layoutX="19.0" layoutY="86.0" text="HIGH:" textFill="WHITE">
                      <font>
                         <Font name="Georgia" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="60.0" layoutY="82.0" text="\$0.00" textFill="WHITE">
+                  <Label fx:id="pane_1_low" layoutX="21.0" layoutY="112.0" text="LOW:" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pane_1_close" layoutX="21.0" layoutY="138.0" text="CLOSE:" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pane_1_volume" layoutX="22.0" layoutY="163.0" text="VOLUME:" textFill="WHITE">
                      <font>
                         <Font name="Georgia" size="13.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane fx:id="pane_11" layoutX="577.0" layoutY="157.0" prefHeight="698.0" prefWidth="503.0" styleClass="pane_1111" stylesheets="@style.css">
+            <Pane fx:id="pane_chart" layoutX="577.0" layoutY="182.0" prefHeight="673.0" prefWidth="503.0" styleClass="pane_1111" stylesheets="@style.css">
                <children>
                   <Label layoutX="21.0" layoutY="14.0" text="Chart" textFill="WHITE">
                      <font>
@@ -180,135 +188,186 @@
                   </Label>
                </children>
             </Pane>
-            <Pane fx:id="pane_12" layoutX="392.0" layoutY="289.0" prefHeight="239.0" prefWidth="160.0" styleClass="pane_1" stylesheets="@style.css">
-               <children>
-                  <Label layoutX="7.0" layoutY="14.0" text="Highest Movers" textFill="WHITE">
-                     <font>
-                        <Font name="Georgia" size="21.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="43.0" layoutY="59.0" text="\$0.00" textFill="WHITE">
-                     <font>
-                        <Font name="Georgia" size="13.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="43.0" layoutY="74.0" text="\$0.00" textFill="WHITE">
-                     <font>
-                        <Font name="Georgia" size="13.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="43.0" layoutY="89.0" text="\$0.00" textFill="WHITE">
-                     <font>
-                        <Font name="Georgia" size="13.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-            <Pane fx:id="pane_121" layoutX="21.0" layoutY="541.0" prefHeight="239.0" prefWidth="160.0" styleClass="pane_111" stylesheets="@style.css">
-               <children>
-                  <Label layoutX="29.0" layoutY="14.0" text="Daily Price" textFill="WHITE">
-                     <font>
-                        <Font name="Georgia" size="21.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="43.0" layoutY="59.0" text="\$0.00" textFill="WHITE">
-                     <font>
-                        <Font name="Georgia" size="13.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="43.0" layoutY="74.0" text="\$0.00" textFill="WHITE">
-                     <font>
-                        <Font name="Georgia" size="13.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="43.0" layoutY="89.0" text="\$0.00" textFill="WHITE">
-                     <font>
-                        <Font name="Georgia" size="13.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-            <Pane fx:id="pane_13" layoutX="206.0" layoutY="289.0" prefHeight="239.0" prefWidth="160.0" styleClass="pane_11" stylesheets="@style.css">
-               <children>
-                  <Label layoutX="10.0" layoutY="14.0" text="Daily Price">
-                     <font>
-                        <Font name="Georgia" size="21.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="43.0" layoutY="59.0" text="\$0.00" textFill="WHITE">
-                     <font>
-                        <Font name="Georgia" size="13.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="43.0" layoutY="74.0" text="\$0.00" textFill="WHITE">
-                     <font>
-                        <Font name="Georgia" size="13.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="43.0" layoutY="89.0" text="\$0.00" textFill="WHITE">
-                     <font>
-                        <Font name="Georgia" size="13.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-            <Label layoutX="134.0" layoutY="128.0" text="April 18th 2024, 1:39:58 PM">
+            <Label fx:id="dateTimeLabel" layoutX="573.0" layoutY="122.0" prefHeight="45.0" prefWidth="503.0" text="DateTime">
                <font>
-                  <Font size="20.0" />
+                  <Font size="37.0" />
                </font>
             </Label>
-            <Label layoutX="37.0" layoutY="163.0" prefHeight="96.0" prefWidth="217.0" text="AAPL">
+            <Label fx:id="stockSymbolLabel" layoutX="37.0" layoutY="153.0" prefHeight="96.0" prefWidth="217.0" text=".....">
                <font>
                   <Font name="Georgia" size="84.0" />
                </font>
             </Label>
-            <Label layoutX="265.0" layoutY="218.0" text="-0.24%">
+            <Label fx:id="percent_change" layoutX="205.0" layoutY="213.0" text="0.00%">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Pane fx:id="pane_122" layoutX="206.0" layoutY="541.0" prefHeight="239.0" prefWidth="160.0" styleClass="pane_1" stylesheets="@style.css">
+            <Label fx:id="last_refreshed" layoutX="37.0" layoutY="246.0" prefHeight="16.0" prefWidth="217.0" text="Last Refreshed:" />
+            <Pane fx:id="pane_2" layoutX="212.0" layoutY="289.0" prefHeight="239.0" prefWidth="160.0" styleClass="pane_111" stylesheets="@style.css">
                <children>
-                  <Label layoutX="7.0" layoutY="14.0" text="Highest Movers" textFill="WHITE">
+                  <Label fx:id="pane_2_date" layoutX="27.0" layoutY="14.0" text="Date" textFill="WHITE">
                      <font>
                         <Font name="Georgia" size="21.0" />
                      </font>
                   </Label>
-                  <Label layoutX="43.0" layoutY="59.0" text="\$0.00" textFill="WHITE">
+                  <Label fx:id="pane_2_open" layoutX="18.0" layoutY="63.0" text="OPEN:" textFill="WHITE">
                      <font>
                         <Font name="Georgia" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="43.0" layoutY="74.0" text="\$0.00" textFill="WHITE">
+                  <Label fx:id="pane_2_high" layoutX="19.0" layoutY="86.0" text="HIGH:" textFill="WHITE">
                      <font>
                         <Font name="Georgia" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="43.0" layoutY="89.0" text="\$0.00" textFill="WHITE">
+                  <Label fx:id="pane_2_low" layoutX="21.0" layoutY="112.0" text="LOW:" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pane_2_close" layoutX="21.0" layoutY="138.0" text="CLOSE:" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pane_2_volume" layoutX="22.0" layoutY="163.0" text="VOLUME:" textFill="WHITE">
                      <font>
                         <Font name="Georgia" size="13.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane fx:id="pane_1211" layoutX="392.0" layoutY="541.0" prefHeight="239.0" prefWidth="160.0" styleClass="pane_111" stylesheets="@style.css">
+            <Pane fx:id="pane_3" layoutX="398.0" layoutY="289.0" prefHeight="239.0" prefWidth="160.0" styleClass="pane_1" stylesheets="@style.css">
                <children>
-                  <Label layoutX="29.0" layoutY="14.0" text="Daily Price" textFill="WHITE">
+                  <Label fx:id="pane_3_date" layoutX="27.0" layoutY="14.0" text="Date" textFill="WHITE">
                      <font>
                         <Font name="Georgia" size="21.0" />
                      </font>
                   </Label>
-                  <Label layoutX="43.0" layoutY="59.0" text="\$0.00" textFill="WHITE">
+                  <Label fx:id="pane_3_open" layoutX="18.0" layoutY="63.0" text="OPEN:" textFill="WHITE">
                      <font>
                         <Font name="Georgia" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="43.0" layoutY="74.0" text="\$0.00" textFill="WHITE">
+                  <Label fx:id="pane_3_high" layoutX="19.0" layoutY="86.0" text="HIGH:" textFill="WHITE">
                      <font>
                         <Font name="Georgia" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="43.0" layoutY="89.0" text="\$0.00" textFill="WHITE">
+                  <Label fx:id="pane_3_low" layoutX="21.0" layoutY="112.0" text="LOW:" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pane_3_close" layoutX="21.0" layoutY="138.0" text="CLOSE:" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pane_3_volume" layoutX="22.0" layoutY="163.0" text="VOLUME:" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="pane_4" layoutX="21.0" layoutY="577.0" prefHeight="239.0" prefWidth="160.0" styleClass="pane_1" stylesheets="@style.css">
+               <children>
+                  <Label fx:id="pane_4_date" layoutX="19.0" layoutY="14.0" text="Date" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pane_4_open" layoutX="18.0" layoutY="63.0" text="OPEN:" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pane_4_high" layoutX="19.0" layoutY="86.0" text="HIGH:" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pane_4_low" layoutX="21.0" layoutY="112.0" text="LOW:" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pane_4_close" layoutX="21.0" layoutY="138.0" text="CLOSE:" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pane_4_volume" layoutX="22.0" layoutY="163.0" text="VOLUME:" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="pane_5" layoutX="212.0" layoutY="577.0" prefHeight="239.0" prefWidth="160.0" styleClass="pane_111" stylesheets="@style.css">
+               <children>
+                  <Label fx:id="pane_5_date" layoutX="19.0" layoutY="14.0" text="Date" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pane_5_open" layoutX="18.0" layoutY="63.0" text="OPEN:" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pane_5_high" layoutX="19.0" layoutY="86.0" text="HIGH:" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pane_5_low" layoutX="21.0" layoutY="112.0" text="LOW:" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pane_5_close" layoutX="21.0" layoutY="138.0" text="CLOSE:" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pane_5_volume" layoutX="22.0" layoutY="163.0" text="VOLUME:" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="pane_6" layoutX="398.0" layoutY="577.0" prefHeight="239.0" prefWidth="160.0" styleClass="pane_1" stylesheets="@style.css">
+               <children>
+                  <Label fx:id="pane_6_date" layoutX="27.0" layoutY="14.0" text="Date" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pane_6_open" layoutX="18.0" layoutY="63.0" text="OPEN:" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pane_6_high" layoutX="19.0" layoutY="86.0" text="HIGH:" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pane_6_low" layoutX="21.0" layoutY="112.0" text="LOW:" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pane_6_close" layoutX="21.0" layoutY="138.0" text="CLOSE:" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pane_6_volume" layoutX="22.0" layoutY="163.0" text="VOLUME:" textFill="WHITE">
                      <font>
                         <Font name="Georgia" size="13.0" />
                      </font>

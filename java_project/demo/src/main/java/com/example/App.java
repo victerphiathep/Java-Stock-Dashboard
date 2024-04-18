@@ -1,20 +1,10 @@
 package com.example;
 
-import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.text.Font;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
 import java.io.IOException;
 
 /**
@@ -22,74 +12,32 @@ import java.io.IOException;
  */
 public class App extends Application {
 
-        @Override
-    public void start(Stage stage) {
-        // Real-time date and time label
-        Label dateTimeLabel = new Label();
-        dateTimeLabel.setText(getFormattedDateTime());
-        dateTimeLabel.setFont(Font.font("Georgia", 24));
+    private static Scene scene;
 
-        // AnimationTimer for updating the label with formatted date
-        new AnimationTimer() {
-            @Override
-            public void handle(long now) {
-                dateTimeLabel.setText(getFormattedDateTime());
-            }
-        }.start();
+    @Override
+    public void start(Stage stage) throws IOException {
+        // Load the FXML file
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/com/example/Dashboard.fxml"));
+        Parent root = fxmlLoader.load();
 
-        // Static label as a header
-        Label headerLabel = new Label("Stock Market Dashboard");
-        headerLabel.setFont(Font.font("Georgia", 32));
-
-
-        // Search bar (TextField)
-        TextField searchBar = new TextField();
-        searchBar.setPromptText("Enter Stock Symbol..."); // Placeholder text
-        searchBar.setPrefWidth(200);
-
-
-
-        // VBox layout with spacing between nodes
-        VBox layout = new VBox(10); // Spacing of 10 pixels
-        layout.setAlignment(Pos.CENTER);
-        layout.getChildren().addAll(headerLabel, dateTimeLabel, searchBar);
-
-
-
-        Scene scene = new Scene(layout, 640, 480);
-
+        // Initialize the scene with the loaded FXML root
+        scene = new Scene(root);
         stage.setScene(scene);
+        stage.setTitle("Stock Market Dashboard");
         stage.show();
     }
 
-    private String getFormattedDateTime() {
-        LocalDateTime now = LocalDateTime.now();
-        return now.format(DateTimeFormatter.ofPattern("MMMM d'" + getDayOfMonthSuffix(now.getDayOfMonth()) + "' yyyy, h:mm:ss a"));
-    }
-
-    private String getDayOfMonthSuffix(int day) {
-        if (day >= 11 && day <= 13) {
-            return "th";
-        }
-        switch (day % 10) {
-            case 1:  return "st";
-            case 2:  return "nd";
-            case 3:  return "rd";
-            default: return "th";
-        }
-    }
-
-    static void setRoot(String fxml) throws IOException {
+    public static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
 
+    // Change this method to static
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
 
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
-
 }
